@@ -39,7 +39,7 @@ in {
 
   config = mkIf cfg.enable {
     packages = [cfg.package];
-    files.".config/kitty/kitty.conf".source = mkIf (cfg.settings != {}) (
+    files.".config/kitty/kitty.conf".text = mkIf (cfg.settings != {}) (
       toKittyConf cfg.settings
     );
   };
